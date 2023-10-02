@@ -1,0 +1,95 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>SmallDickBigDreams | {% block title%}{% endblock %}</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="logo">
+                    <h1>SmallDickBigDreams</h1>
+                </div>
+            </div>
+        </header>
+        <nav class="sidebar">
+            <!-- Sidebar content -->
+            <div class="profile-button profile">
+                <img src="{% static 'img/Account.png' %}" alt="Profile">
+                <span class="profile-tooltip">Profile</span>
+            </div>
+            <div class="separator"></div>
+            <div class="profile-button">
+                <img src="{% static 'img/add.png' %}" alt="Write Post">
+                <span class="profile-tooltip">Write Post</span>
+            </div>
+            <div class="profile-button">
+                <img src="{% static 'img/search.png' %}" alt="Find Post">
+                <span class="profile-tooltip">Find Post</span>
+            </div>
+            <div class="profile-button">
+                <img src="{% static 'img/like.png' %}" alt="Liked Posts">
+                <span class="profile-tooltip">Liked Posts</span>
+            </div>
+            <div class="profile-button">
+                <img src="{% static 'img/exit.png' %}" alt="Logout">
+                <span class="profile-tooltip">Logout</span>
+            </div>
+            <div class="separator2"></div>
+            <div class="profile-button_user1">
+                <img src="{% static 'img/avatar.png' %}" alt="Пользователь 1">
+                <span class="profile-tooltip_user">Logout</span>
+            </div>
+            <div class="profile-button_user2">
+                <img src="{% static 'img/avatar.png' %}" alt="Пользователь 2">
+                <span class="profile-tooltip_user">Logout</span>
+            </div>
+            <div class="profile-button_user3">
+                <img src="{% static 'img/avatar.png' %}" alt="Пользователь 3">
+                <span class="profile-tooltip_user">Logout</span>
+            </div>
+            <div class="profile-button_user4">
+                <img src="{% static 'img/avatar.png' %}" alt="Пользователь 4">
+                <span class="profile-tooltip_user">Logout</span>
+            </div>
+            <div class="profile-button_user5">
+                <img src="{% static 'img/avatar.png' %}" alt="Пользователь 5">
+                <span class="profile-tooltip_user">Logout</span>
+            </div>
+            <div class="profile-button_user6">
+                <img src="{% static 'img/avatar.png' %}" alt="Пользователь 6">
+                <span class="profile-tooltip_user">Logout</span>
+            </div>
+            <div class="profile-button_user7">
+                <img src="{% static 'img/avatar.png' %}" alt="Пользователь 7">
+                <span class="profile-tooltip_user">Logout</span>
+            </div>
+            <div class="profile-button_user8">
+                <img src="{% static 'img/avatar.png' %}" alt="Пользователь 8">
+                <span class="profile-tooltip_user">Logout</span>
+            </div>
+            <div class="profile-button_user9">
+                <img src="{% static 'img/avatar.png' %}" alt="Пользователь 9">
+                <span class="profile-tooltip_user">Logout</span>
+            </div>
+            <div class="profile-button_user10">
+                <img src="{% static 'img/avatar.png' %}" alt="Пользователь 10">
+                <span class="profile-tooltip_user">Logout</span>
+            </div>
+
+            <div class="separator3"></div>
+        </nav>
+        <div class="content">
+            {% block content %}
+                <p>Ничего не найдено!</p>
+            {% endblock %}
+        </div>
+    </div>
+</body>
+</html>

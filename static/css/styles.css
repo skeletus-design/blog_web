@@ -1,0 +1,236 @@
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: -webkit-linear-gradient(90deg, #f2f0ff, #a3c2ff);
+    background: linear-gradient(90deg, #f2f0ff, #a3c2ff);
+    background-size: cover;
+    background-position: center center;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header styles */
+header {
+    background-color: rgba(230, 233, 255, 0.8);
+    color: #000;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+    height: 60px;
+}
+
+.logo h1 {
+    font-size: 24px;
+}
+
+/* Sidebar styles */
+.sidebar {
+    background-color: rgba(230, 233, 255, 0.8);
+    color: #000;
+    padding: 10px;
+    width: 36px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar:before {
+    content: '';
+    width: 2px;
+    height: 100%;
+    background-color: rgb(133, 152, 196);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.separator {
+    width: 100%;
+    height: 1.5px;
+    background-color: rgb(133, 152, 196);
+    margin: 10px 0;
+    padding-left: 18px;
+
+}
+
+.separator2 {
+    width: 100%;
+    height: 1.5px;
+    background-color: rgb(133, 152, 196);
+    margin: 10px 0;
+    padding-left: 18px;
+}
+
+.separator3 {
+    width: 100%;
+    height: 1.5px;
+    background-color: rgb(133, 152, 196);
+    bottom: -60px ;
+    padding-left: 18px;
+}
+
+/* Profile button styles */
+.profile-button:not(.profile) {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #9db9ff;
+    border-radius: 5px;
+    background-color: rgb(228, 242, 255);
+    justify-content: center;
+}
+
+/* Profile button styles for profile button */
+.profile-button.profile {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    margin-top: 0;
+    width: 36px;
+    height: 36px;
+    border: 2px solid #9db9ff;
+    border-radius: 5px;
+    background-color: rgba(228, 242, 255);
+    justify-content: center;
+}
+
+.profile-button img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Tooltip styles */
+.profile-tooltip {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #eeeeee;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: none;
+}
+
+/* Tooltip styles */
+.profile-tooltip-user {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #eeeeee;
+    padding: 5px 10px;
+    border-radius: 15px;
+    display: none;
+}
+
+
+.profile-button:hover .profile-tooltip {
+    display: block;
+}
+
+/* Main content styles */
+main {
+    padding: 20px;
+    margin: 20px;
+    flex-grow: 1;
+    position: relative;
+    z-index: 1;
+}
+
+/* Post styles */
+.post_your {
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 2px solid #9db9ff;
+    border-radius: 15px;
+    padding: 10px;
+    margin-bottom: 20px;
+    position: relative;
+    margin-right: 60px;
+}
+
+.post_another {
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 2px solid #9db9ff;
+    border-radius: 15px;
+    padding: 10px;
+    margin-bottom: 20px;
+    position: relative;
+    margin-right: 60px;
+}
+
+.post h2 {
+    font-size: 20px;
+    margin-top: 0;
+}
+
+.post p {
+    font-size: 16px;
+}
+
+/* Edit button styles */
+.edit-button {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: transparent;
+    border: 2px solid #9db9ff;
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    transition: background-color 0.3s ease;
+    padding: 10px;
+}
+
+
+/* Like button styles */
+.like-button {
+    width: 30px;
+    height: 30px;
+    border-radius: 13px;
+    background-color: transparent;
+    border: 2px solid #9db9ff;
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    transition: background-color 0.3s ease;
+    padding: 10px;
+}
+
+.edit-button:hover {
+    background-color: rgb(149, 137, 255);
+    border: 2px solid rgb(149, 137, 255);
+}
+
+.like-button:hover {
+    background-color: rgb(253, 145, 145);
+    border: 2px solid rgb(253, 145, 145); 
+}
+
+.profile-button:hover {
+    background-color: rgb(173, 198, 255);
+    border: 2px solid rgb(173, 198, 255);
+}
