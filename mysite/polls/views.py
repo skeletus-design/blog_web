@@ -9,3 +9,6 @@ class auth(TemplateView):
     
 class registration(TemplateView):
     template_name = "registration.html"
+    
+class profile(TemplateView):
+    template_name = "profile.html"

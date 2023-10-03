@@ -1,12 +1,12 @@
-{% load static %}
+{%load static%}
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'styles.css' %}">
-    <title>Главная страница</title>
+    <title></title>
+    <link rel="stylesheet" href="{% static "styles.css" %}">
 </head>
 <body>
     <div class="container">
@@ -17,6 +17,35 @@
                 </div>
             </div>
         </header>
+        <div class="profile-box">
+            <h1>Профиль</h1>
+            <div class="profile_avatar">
+                <img src={% static "img/Account.png" %} alt="Profile">
+            </div> 
+            <div class="profile-content">   
+                <div>
+                    <p>
+                        Имя: 
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        Фамилия:
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        Почта:
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        Пароль:
+                    </p>
+                </div>
+            <div class="redakt">Редактировать</div>     
+            </div>
+        </div>
         <nav class="sidebar">
             <!-- Сайд бар -->
             <div class="profile-button profile">
@@ -90,22 +119,6 @@
                 <span class="profile-tooltip">More</span>
             </div>
         </nav>
-        <div class="content">
-            <main>
-                <!-- Контент для поста -->
-                <div class="post_your">
-                    <h2>Твой пост</h2>
-                    <p>Текст поста...</p>
-                    <img src="Design/edit.png" alt="Edit" class="edit-button">
-                </div>
-                
-                <div class="post_another">
-                    <h2>Чужой пост</h2>
-                    <p>Текст поста...</p>
-                    <img src="Design/like.png" alt="Like" class="like-button">
-                </div>                
-            </main>
-        </div>
     </div>
 </body>
 </html>
