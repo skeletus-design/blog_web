@@ -4,4 +4,6 @@
 В случае если активация не прошла успешно зайдите в cmd от администратора и выполните команду Set-ExecutionPolicy RemoteSigned 
 и выберете A
 
-Путь для интерпритатора C:\Users\nikit\AppData\Local\Programs\Python\Python311\python.exe
+Путь для интерпритатора C:\Users\nikit\AppData\Local\Programs\Python\Python311\
+В случае ошибки интерпритатора установите его от администратора по указанному выше пути.
+
