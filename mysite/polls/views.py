@@ -9,3 +9,4 @@ class auth(TemplateView):
     
 class registration(TemplateView):
     template_name = "registration.html"
+    
