@@ -354,7 +354,7 @@ main {
 /* Уменьшаем размер аватарки в 3 раза */
 .profile_avatar img {
     width: 16%; /* Устанавливаем ширину на 33.33% от родительского контейнера */
-    border: 2px solid #9db9ff;;
+    border: 2px solid #9db9ff;
 }
 
 .redakt {
