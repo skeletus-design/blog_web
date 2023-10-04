@@ -12,6 +12,8 @@ class registration_page(TemplateView):
     
 class profile(TemplateView):
     template_name = "profile.html"
+    
+    
 def registration(request):
     if request.method == "POST":
         return render(request, 'registration.html')
