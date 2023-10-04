@@ -25,7 +25,7 @@
             </div>
             <div class="separator"></div>
             <div class="profile-button">
-                <img src="{% static 'img/add.png' %}" alt="Write Post">
+                <img src="{% static 'img/add.png' %}" alt="Write Post" id="add-post-button">
                 <span class="profile-tooltip">Write Post</span>
             </div>
             <div class="profile-button">
@@ -73,6 +73,31 @@
             </main>
         </div>
     </div>
+
+    <!-- Всплывающее окно для добавления поста -->
+    <div id="post-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-modal" class="close-button">&times;</span>
+            <form>
+                <div class="input-container">
+                    <input type="text" placeholder="Заголовок">
+                </div>
+                <div class="input-container">
+                    <textarea placeholder="Текст поста"></textarea>
+                </div>
+                <div class="image-upload-button">
+                    <label for="image-input">
+                        <img src="{% static 'img/add_picture.png' %}" alt="Add Image">
+                    </label>
+                    <input type="file" id="image-input" accept="image/*">
+                </div>
+                <div class="button-container">
+                    <button type="button" id="cancel-post">Отмена</button>
+                    <button type="submit" id="save-post">Сохранить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="{% static 'script.js' %}"></script>
 </body>
 </html>
-

@@ -8,6 +8,5 @@ urlpatterns = [
     path("registration_page/", views.registration_page.as_view(), name="registration_page"),
     path("profile/", views.profile.as_view(), name="profile"),
     path("", views.registration, name="registr"),
-    path("add_post/", views.add_post.as_view(), name="add_post"),
 ]
 
