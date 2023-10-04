@@ -1,5 +1,5 @@
 {%load static%}
-
+{%block content%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{% static "styles.css" %}">
 </head>
 <body>
+    <form action="" method="POST">
     <div class="container">
         <header>
             <div class="header-content">
@@ -38,6 +39,8 @@
                 <button class="register-reg-button">Зарегистироваться</button>
             </div>            
         </div>
+    </form>
     </div>
+{%endblock content%}
 </body>
 </html>

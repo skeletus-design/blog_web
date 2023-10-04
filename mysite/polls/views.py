@@ -1,12 +1,24 @@
 from django.shortcuts import render, redirect
-from django.views.generic import TemplateView
+from django.contrib.auth.forms import UserCreationForm
+from . forms import UserRegisterForm
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
-class AboutView(TemplateView):
-    template_name = "main.html"
-    
-class auth(TemplateView):
-    template_name = "auth.html"
-    
-class registration(TemplateView):
-    template_name = "registration.html"
-    
+def home(request):
+    return render(request, 'templates/main.html')
+
+def register(request):
+    if request.method == 'POST':
+        form = UserRegisterForm(request.POST)
+        form.is_valid()
+        form.save()
+        username = form.cleaned_data.get('username')
+        messages.success(request, f'Привет {username} ваш аккаунт был успешно создан!')
+        return redirect('home')
+    else:
+        form = UserRegisterForm
+
+    return render(request, 'templates/registration.html', {'form': form})
+# @login_required()
+# def profile(request):
+#     return render(request,)
