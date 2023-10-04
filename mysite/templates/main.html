@@ -20,8 +20,10 @@
         <nav class="sidebar">
             <!-- Сайд бар -->
             <div class="profile-button profile">
-                <img src="{% static 'img/Account.png' %}" alt="Profile">
-                <span class="profile-tooltip">Profile</span>
+                <a href="{% url 'profile' %}">
+                    <img src="{% static 'img/Account.png' %}" alt="Profile">
+                    <span class="profile-tooltip">Profile</span>
+                </a>
             </div>
             <div class="separator"></div>
             <div class="profile-button">
