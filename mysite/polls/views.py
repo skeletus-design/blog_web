@@ -7,6 +7,11 @@ class AboutView(TemplateView):
 class auth(TemplateView):
     template_name = "auth.html"
     
-class registration(TemplateView):
+class registration_page(TemplateView):
     template_name = "registration.html"
     
+class profile(TemplateView):
+    template_name = "profile.html"
+def registration(request):
+    if request.method == "POST":
+        return render(request, 'registration.html')
