@@ -37,7 +37,7 @@ def login_(request):
         if user is not None:
             login(request, user)
             return redirect('/')
-        
+       
 # if request.user.is_authenticated:
 #         return render(request, 'index.html') 
 #     else:
