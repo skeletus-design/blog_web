@@ -19,42 +19,79 @@
         </header>
         <nav class="sidebar">
             <!-- Сайд бар -->
-            <div class="profile-button profile">
-                <a href="{% url 'profile' %}">
-                    <img src="{% static 'img/Account.png' %}" alt="Profile">
+            <form action='#' method='POST'>
+                {% csrf_token %}
+                <div class="profile-button profile">
+                    <a href={% url "profile" %} alt="Profile"><img src={% static "img/Account.png" %}></a>
                     <span class="profile-tooltip">Profile</span>
-                </a>
-            </div>
-            <div class="separator"></div>
-            <div class="profile-button">
-                <img src="{% static 'img/add.png' %}" alt="Write Post" id="add-post-button">
-                <span class="profile-tooltip">Write Post</span>
-            </div>
-            <div class="profile-button">
-                <img src="{% static 'img/search.png' %}" alt="Find Post">
-                <span class="profile-tooltip">Find Post</span>
-            </div>
-            <div class="profile-button">
-                <img src="{% static 'img/like.png' %}" alt="Liked Posts">
-                <span class="profile-tooltip">Liked Posts</span>
-            </div>
-            <div class="profile-button">
-                <img src="{% static 'img/exit.png' %}" alt="Logout">
-                <span class="profile-tooltip">Logout</span>
-            </div>
-            <div class="separator2"></div>
-            <!-- Новые кнопки -->
-            <div class="profile-button rounded-avatar">
-                <img src="{% static 'img/avatar.png' %}" alt="Avatar 1">
-                <span class="profile-tooltip">Avatar 1</span>
-            </div>
-            <!-- Добавьте другие кнопки здесь -->
-            <!-- ... -->
-            <!-- Добавляем кнопку "More" внизу -->
-            <div class="profile-button">
-                <img src="{% static 'img/more.png' %}" alt="More">
-                <span class="profile-tooltip">More</span>
-            </div>
+                </div>
+                <div class="separator"></div>
+                <div class="profile-button">
+                    <img src={% static "img/add.png" %} alt="Write Post">
+                    <span class="profile-tooltip">Write Post</span>
+                </div>
+                <div class="profile-button">
+                    <img src={% static "img/search.png" %} alt="Find Post">
+                    <span class="profile-tooltip">Find Post</span>
+                </div>
+                <div class="profile-button">
+                    <img src={% static "img/like.png" %} alt="Liked Posts">
+                    <span class="profile-tooltip">Liked Posts</span>
+                </div>
+                <div class="profile-button">
+                    <img src={% static "img/exit.png" %} alt="Logout">
+                    <span class="profile-tooltip">Logout</span>
+                </div>
+                <div class="separator2"></div>
+                <!-- Новые кнопки -->
+                <div class="profile-button rounded-avatar">
+                    <img src={% static "img/avatar.png" %} alt="Avatar 1">
+                    <span class="profile-tooltip">Avatar 1</span>
+                </div>
+                <div class="profile-button rounded-avatar">
+                    <img src={% static "img/avatar.png" %} alt="Avatar 2">
+                    <span class="profile-tooltip">Avatar 2</span>
+                </div>
+                <div class="profile-button rounded-avatar">
+                    <img src={% static "img/avatar.png" %} alt="Avatar 3">
+                    <span class="profile-tooltip">Avatar 3</span>
+                </div>
+                <div class="profile-button rounded-avatar">
+                    <img src={% static "img/avatar.png" %} alt="Avatar 4">
+                    <span class="profile-tooltip">Avatar 4</span>
+                </div>
+                <div class="profile-button rounded-avatar">
+                    <img src={% static "img/avatar.png" %} alt="Avatar 5">
+                    <span class="profile-tooltip">Avatar 5</span>
+                </div>
+                <div class="profile-button rounded-avatar">
+                    <img src={% static "img/avatar.png" %} alt="Avatar 6">
+                    <span class="profile-tooltip">Avatar 6</span>
+                </div>
+                {% comment %} <div class="profile-button rounded-avatar">
+                    <img src={% static "img/avatar.png" %} alt="Avatar 7">
+                    <span class="profile-tooltip">Avatar 7</span>
+                </div>
+                <!-- Добавляем три новые кнопки -->
+                <div class="profile-button rounded-avatar">
+                    <img src={% static "img/avatar.png" %} alt="Avatar 8">
+                    <span class="profile-tooltip">Avatar 8</span>
+                </div> {% endcomment %}
+                {% comment %} <div class="profile-button rounded-avatar">
+                    <img src={% static "img/avatar.png" %} alt="Avatar 9">
+                    <span class="profile-tooltip">Avatar 9</span>
+                </div>
+                <div class="profile-button rounded-avatar">
+                    <img src={% static "img/avatar.png" %} alt="Avatar 10">
+                    <span class="profile-tooltip">Avatar 10</span>
+                </div> {% endcomment %}
+                <div class="separator3"></div>
+                <!-- Добавляем кнопку "More" внизу -->
+                <div class="profile-button">
+                    <img src={% static "img/more.png" %} alt="More">
+                    <span  class="profile-tooltip">More</span>
+                </div>
+            </form>
         </nav>
         <div class="content">
             <main>
@@ -62,44 +99,16 @@
                 <div class="post_your">
                     <h2>Твой пост</h2>
                     <p>Текст поста...</p>
-                    <div class="edit-delete-buttons">
-                        <img src="{% static 'img/edit.png' %}" alt="Edit" class="edit-button">
-                        <img src="{% static 'img/delete_button.png' %}" alt="Delete" class="delete-button">
-                    </div>
+                    <img src={% static "img/edit.png" %} alt="Edit" class="edit-button">
                 </div>
+                
                 <div class="post_another">
                     <h2>Чужой пост</h2>
                     <p>Текст поста...</p>
-                    <img src="{% static 'img/like.png' %}" alt="Like" class="like-button">
-                </div>
+                    <img src={% static "img/like.png" %} alt="Like" class="like-button">
+                </div>                
             </main>
         </div>
     </div>
-
-    <!-- Всплывающее окно для добавления поста -->
-    <div id="post-modal" class="modal">
-        <div class="modal-content">
-            <span id="close-modal" class="close-button">&times;</span>
-            <form>
-                <div class="input-container">
-                    <input type="text" placeholder="Заголовок">
-                </div>
-                <div class="input-container">
-                    <textarea placeholder="Текст поста"></textarea>
-                </div>
-                <div class="image-upload-button">
-                    <label for="image-input">
-                        <img src="{% static 'img/add_picture.png' %}" alt="Add Image">
-                    </label>
-                    <input type="file" id="image-input" accept="image/*">
-                </div>
-                <div class="button-container">
-                    <button type="button" id="cancel-post">Отмена</button>
-                    <button type="submit" id="save-post">Сохранить</button>
-                </div>
-            </form>
-        </div>
-    </div>
-    <script src="{% static 'script.js' %}"></script>
 </body>
 </html>
