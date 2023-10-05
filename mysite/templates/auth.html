@@ -13,26 +13,27 @@
         <header>
             <div class="header-content">
                 <div class="logo">
-                    <h1>SmallDickBigDreams</h1>
+                    <h1 style='text-decoration: none;'>SmallDickBigDreams</h1>
                 </div>
             </div>
         </header>
-        <form action='#' method='POST'>
+        <form action='/sign_in' method='POST'>
             {% csrf_token %}
             <div class="login-box">
                 <h2>Авторизация:</h2>
                 <div class="input-container">
-                    <input type="text" placeholder="Логин">
+                    <input type="text" placeholder="Логин" name='username'>
                 </div>
                 <div class="input-container">
-                    <input type="password" placeholder="Пароль">
+                    <input type="password" placeholder="Пароль" name='password'>
                 </div>
                 <div class="button-container">
                     <a style='text-decoration: none;' class="register-button" href={% url "registration_page" %}>Регистрация</a>
                 </div>            
                 <div class="button-container">
-                    <button class="login-button">Войти</button>
+                    
                 </div>
+                <button class="login-button">Войти</button>
             </div>
         </form>
     </div>
