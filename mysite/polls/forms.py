@@ -1,5 +1,8 @@
 from django import forms
 
 class SignInForm(forms.Form):
-    name = forms.CharField(max_length=100)
+    login = forms.CharField(max_length=16)
     password = forms.CharField(widget=forms.PasswordInput())
+    
+    def __init__(self, *args, **kwargs):
+        super(SignInForm, self).__init__(*args, **kwargs)

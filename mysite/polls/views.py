@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.views.generic import TemplateView
 from django import forms
 from django.contrib.auth import authenticate, login, logout
+from polls.forms import SignInForm
 
 
 class AboutView(TemplateView):
@@ -41,3 +42,7 @@ def login_(request):
 #         return render(request, 'index.html') 
 #     else:
 #         return redirect('/sign_in')
+
+# def form_context(request):
+#     form = SignInForm(request.POST or None)
+#     return {'form': form}
