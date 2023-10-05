@@ -23,7 +23,11 @@ class registration_page(TemplateView):
 class profile(TemplateView):
     template_name = "profile.html"
     
-    
+def log_out(request):
+    if request.method == 'POST':
+        logout(request)
+        return redirect('/auth')   
+     
 
 # def SignIn(forms.Form):
 #     if request.method == 'POST':
