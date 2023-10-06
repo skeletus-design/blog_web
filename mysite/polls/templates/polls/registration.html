@@ -21,9 +21,9 @@
         </header>
         <div class="login-box-second">
             <h2>Регистрация:</h2>
-            <form method='POST'>
+            <form action="." method='POST'>
                 {% csrf_token %}
-                {{ form.as_p }}
+                {{ user_form.as_p }}
                 <button type=“submit”>Отправить</button>
             </form>
 
