@@ -1,0 +1,113 @@
+Index: mysite/polls/urls.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from django.urls import path\r\n\r\nfrom . import views\r\n\r\nurlpatterns = [\r\n    path(\"\", views.AboutView.as_view(), name=\"index\"),\r\n    path(\"auth/\", views.auth.as_view(), name=\"auth\"),\r\n    path(\"registration_page/\", views.registration_page.as_view(), name=\"registration_page\"),\r\n    path(\"profile/\", views.profile.as_view(), name=\"profile\"),\r\n    path(\"\", views.registration, name=\"registr\"),\r\n    path(\"main/\", views.AboutView.as_view(), name=\"main\"), \r\n]\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/mysite/polls/urls.py b/mysite/polls/urls.py
+--- a/mysite/polls/urls.py	(revision 63a5b7d04635c6b5b5fb4d05d8c4320cd20de8cb)
++++ b/mysite/polls/urls.py	(date 1696460371669)
+@@ -7,7 +7,6 @@
+     path("auth/", views.auth.as_view(), name="auth"),
+     path("registration_page/", views.registration_page.as_view(), name="registration_page"),
+     path("profile/", views.profile.as_view(), name="profile"),
+-    path("", views.registration, name="registr"),
+     path("main/", views.AboutView.as_view(), name="main"), 
+ ]
+ 
+Index: mysite/polls/views.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from django.shortcuts import render, redirect\r\nfrom django.views.generic import TemplateView\r\n\r\nclass AboutView(TemplateView):\r\n    template_name = \"main.html\"\r\n    \r\nclass auth(TemplateView):\r\n    template_name = \"auth.html\"\r\n    \r\nclass registration_page(TemplateView):\r\n    template_name = \"registration.html\"\r\n    \r\nclass profile(TemplateView):\r\n    template_name = \"profile.html\"\r\ndef registration(request):\r\n    if request.method == \"POST\":\r\n        return render(request, 'registration.html')\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/mysite/polls/views.py b/mysite/polls/views.py
+--- a/mysite/polls/views.py	(revision 63a5b7d04635c6b5b5fb4d05d8c4320cd20de8cb)
++++ b/mysite/polls/views.py	(date 1696507695616)
+@@ -1,4 +1,8 @@
+ from django.shortcuts import render, redirect
++from django.contrib.auth.forms import UserCreationForm
++from .forms import UserRegistrationForm
++from django.contrib import messages
++from django.contrib.auth import login_required
+ from django.views.generic import TemplateView
+ 
+ class AboutView(TemplateView):
+@@ -12,6 +16,15 @@
+     
+ class profile(TemplateView):
+     template_name = "profile.html"
++
++def home(request):
++    return render(request, 'polls/main.html')
++
+ def registration(request):
+     if request.method == "POST":
++        form = UserRegistrationForm
++
+         return render(request, 'registration.html')
++
++
++
+Index: mysite/polls/forms.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/mysite/polls/forms.py b/mysite/polls/forms.py
+new file mode 100644
+--- /dev/null	(date 1696460581850)
++++ b/mysite/polls/forms.py	(date 1696460581850)
+@@ -0,0 +1,10 @@
++from django.contrib.auth.models import User
++from django.contrib.auth.forms import UserCreationForm
++from django import forms
++
++class UserRegistrationForm(UserCreationForm):
++    email = forms.EmailField()
++
++class Meta:
++    model = User
++    fields = ['username', 'last_name', 'email','password1','password2']
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"f697e184-f7c3-4894-a02a-47188d42f3a9\" name=\"Changes\" comment=\"55\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"ChangesViewManager\">\r\n    <option name=\"groupingKeys\">\r\n      <option value=\"directory\" />\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"adeqoou_1\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 0\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2WDoVpKm6G28INMrYWWpWKUq3m7\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;main&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/plato/OneDrive/Рабочий стол/SmallDickBigDreams/blog_web&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;\r\n  }\r\n}</component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"f697e184-f7c3-4894-a02a-47188d42f3a9\" name=\"Changes\" comment=\"\" />\r\n      <created>1696276539232</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1696276539232</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"change_instruction\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1696323106854</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1696323106854</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"55\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1696449492636</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1696449492636</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"55\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1696450466023</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1696450466023</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"4\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"change_instruction\" />\r\n    <MESSAGE value=\"55\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"55\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 63a5b7d04635c6b5b5fb4d05d8c4320cd20de8cb)
++++ b/.idea/workspace.xml	(date 1696461745426)
+@@ -4,7 +4,13 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="f697e184-f7c3-4894-a02a-47188d42f3a9" name="Changes" comment="55" />
++    <list default="true" id="f697e184-f7c3-4894-a02a-47188d42f3a9" name="Changes" comment="55">
++      <change afterPath="$PROJECT_DIR$/mysite/polls/forms.py" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_10_2023_22_36__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_10_2023_22_36__Changes_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/mysite/polls/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/polls/urls.py" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/mysite/polls/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/polls/views.py" afterDir="false" />
++    </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -13,6 +19,13 @@
+   <component name="ChangesViewManager">
+     <option name="groupingKeys">
+       <option value="directory" />
++    </option>
++  </component>
++  <component name="FileTemplateManagerImpl">
++    <option name="RECENT_TEMPLATES">
++      <list>
++        <option value="Python Script" />
++      </list>
+     </option>
+   </component>
+   <component name="Git.Settings">

@@ -1,0 +1,54 @@
+<changelist name="Uncommitted_changes_before_Checkout_at_05_10_2023_0_50_[Changes]1" date="1696456241783" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_05_10_2023_0_50_[Changes]1/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 05.10.2023 0:50 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="mysite/static/img/Monte Carlo.jpg" />
+    <option name="AFTER_PATH" value="mysite/polls/static/img/Monte Carlo.jpg" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_05_10_2023_0_50_[Changes]1/Monte Carlo.jpg" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="mysite/static/img/avatar.png" />
+    <option name="AFTER_PATH" value="mysite/polls/static/img/avatar.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_05_10_2023_0_50_[Changes]1/avatar.png" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="mysite/static/img/icon.png" />
+    <option name="AFTER_PATH" value="mysite/polls/static/img/icon.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_05_10_2023_0_50_[Changes]1/icon.png" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="mysite/static/img/search.png" />
+    <option name="AFTER_PATH" value="mysite/polls/static/img/search.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_05_10_2023_0_50_[Changes]1/search.png" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="mysite/static/img/add.png" />
+    <option name="AFTER_PATH" value="mysite/polls/static/img/add.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_05_10_2023_0_50_[Changes]1/add.png" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="mysite/static/img/edit.png" />
+    <option name="AFTER_PATH" value="mysite/polls/static/img/edit.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_05_10_2023_0_50_[Changes]1/edit.png" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="mysite/static/img/like.png" />
+    <option name="AFTER_PATH" value="mysite/polls/static/img/like.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_05_10_2023_0_50_[Changes]1/like.png" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="mysite/static/img/more.png" />
+    <option name="AFTER_PATH" value="mysite/polls/static/img/more.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_05_10_2023_0_50_[Changes]1/more.png" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="mysite/static/img/Account.png" />
+    <option name="AFTER_PATH" value="mysite/polls/static/img/Account.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_05_10_2023_0_50_[Changes]1/Account.png" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="mysite/static/img/exit.png" />
+    <option name="AFTER_PATH" value="mysite/polls/static/img/exit.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_05_10_2023_0_50_[Changes]1/exit.png" />
+  </binary>
+</changelist>

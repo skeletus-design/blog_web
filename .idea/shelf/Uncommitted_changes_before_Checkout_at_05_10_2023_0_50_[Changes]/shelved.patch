@@ -1,0 +1,31 @@
+Index: mysite/polls/forms.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from django.contrib.auth.models import User\r\nfrom django.auth.contrib.forms import UserCreationForm\r\nfrom django import forms\r\n\r\nclass UserRegisterForm(UserCreationForm):\r\n    email = forms.EmailField()\r\n\r\nclass Meta:\r\n    model=User\r\n    fields = ['name', 'last_name', 'email', 'password1', 'password2']
+===================================================================
+diff --git a/mysite/polls/forms.py b/mysite/polls/forms.py
+--- a/mysite/polls/forms.py	
++++ b/mysite/polls/forms.py	
+@@ -1,10 +1,10 @@
+-from django.contrib.auth.models import User
+-from django.auth.contrib.forms import UserCreationForm
+-from django import forms
+-
+-class UserRegisterForm(UserCreationForm):
+-    email = forms.EmailField()
+-
+-class Meta:
+-    model=User
+-    fields = ['name', 'last_name', 'email', 'password1', 'password2']
+\ No newline at end of file
++# from django.contrib.auth.models import User
++# from django.contrib.auth.forms import UserCreationForm
++# from django import forms
++#
++# class UserRegisterForm(UserCreationForm):
++#     email = forms.EmailField()
++#
++# class Meta:
++#     model=User
++#     fields = ['name', 'last_name', 'email', 'password1', 'password2']
+\ No newline at end of file
