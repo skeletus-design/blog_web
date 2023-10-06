@@ -1,11 +1,14 @@
 from django.shortcuts import render, redirect
+from django.urls import reverse_lazy
 from django.views.generic import TemplateView
-from django import forms
+from polls.forms import RegistrationFrom
 from django.contrib.auth import authenticate, login, logout
+from django_registration.backends.one_step.views import RegistrationView
 
 
 
-# class AboutView(TemplateView):
+
+# class AboutView(TemplateView):                               
 #     template_name = "main.html"
     
 def AboutView(request):
@@ -46,9 +49,45 @@ def login_(request):
             return redirect('index')
         else:
             return redirect('auth')
+
+def sign_up(request):
+    if request.method == 'POST':
+        print('bigballs')
+        form = RegistrationFrom()
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect('auth')
+        return render(request, 'registration.html', { 'form': form})
+    else:
+        form = RegistrationFrom()
+        return render(request, 'registration.html', { 'form': form})ы
+    
+    
+# def sign_upp(request):
+#     if request.method == 'POST':
+#         form = RegistrationFrom()
+#         if form.is_valid():
+#             user = form.save()
+#             login(request, user)
+#             return redirect('auth')
+
+
+class CustomRegistrationView(RegistrationView):
+    """
+    Вьюшка для регистрации пользователя в аккаунт
+    """
+
+    template_name = 'registration.html'
+    form_class = RegFrom
+    success_url = reverse_lazy('profile')
+
+    def dispatch(self, args, **kwargs):
+        if self.request.user.is_authenticated:
+            return redirect(self.success_url)
+
+        return super().dispatch(args, **kwargs)
         
-
-
 
 def index(request):
     if request.user.is_authenticated:

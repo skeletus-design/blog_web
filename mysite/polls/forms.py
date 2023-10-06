@@ -1,7 +1,9 @@
 
 from django import forms
-from django.contrib.auth.forms import UserCreationForm
+# from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from django_registration.forms import RegistrationForm
+
 
 
 # class SignInForm(forms.Form):
@@ -12,10 +14,8 @@ from django.contrib.auth.models import User
 #         super(SignInForm, self).__init__(*args, **kwargs)
     
     
-class RegistrationFrom(UserCreationForm):
-    email = forms.EmailField(required=True)
-
+class RegFrom(RegistrationForm):
+    email = forms.EmailField()
     class Meta:
-        app_label = 'polls'
         model = User
-        fields = ['username', 'email', 'password1', 'password2', 'first_name', 'last_name']
+        fields = ['username', 'email', 'password1', 'password2']
