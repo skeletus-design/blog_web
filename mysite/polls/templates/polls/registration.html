@@ -9,37 +9,45 @@
     <title>Регистрация</title>
     <link rel="stylesheet" href="{% static "styles.css" %}">
 </head>
+{% block content %}
 <body>
     <div class="container">
         <header>
             <div class="header-content">
                 <div class="logo">
-                    <h1>SmallDickBigDreams</h1>
+                    <a style='text-decoration: none;' href={% url "index" %}><h1>SmallDickBigDreams</h1></a>
                 </div>
             </div>
         </header>
         <div class="login-box-second">
             <h2>Регистрация:</h2>
-            <div class="input-container">
-                <input type="name" placeholder="Имя">
-            </div>
-            <div class="input-container">
-                <input type="surname" placeholder="Фамилия">
-            </div>
-            <div class="input-container">
-                <input type="email" placeholder="Почта">
-            </div>
-            <div class="input-container">
-                <input type="password" placeholder="Пароль">
-            </div>
-            <div class="input-container">
-                <input type="password_confirm" placeholder="Подтвердите пароль">
-            </div>
-            <div class="button-container">
-                <button class="register-reg-button">Зарегистироваться</button>
-            </div>            
+            <form method='POST'>
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type=“submit”>Отправить</button>
+            </form>
+
+                {% comment %} <div class="input-container">
+                    <input type="name" placeholder="Имя">
+                </div>
+                <div class="input-container">
+                    <input type="surname" placeholder="Фамилия">
+                </div>
+                <div class="input-container">
+                    <input type="email" placeholder="Почта">
+                </div>
+                <div class="input-container">
+                    <input type="password" placeholder="Пароль">
+                </div>
+                <div class="input-container">
+                    <input type="password_confirm" placeholder="Подтвердите пароль">
+                </div>
+                <div class="button-container">
+                    <button class="register-reg-button">Зарегистироваться</button>
+                </div>            {% endcomment %}
         </div>
     </div>
 </body>
+{% endblock %}
 </html>
 

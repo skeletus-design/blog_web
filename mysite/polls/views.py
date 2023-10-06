@@ -1,40 +1,44 @@
 from django.shortcuts import render, redirect
+from django.urls import reverse_lazy
 from django.views.generic import TemplateView
-from django.contrib.auth.forms import UserCreationForm
-from .forms import RegistrationFrom
-from django import forms
+from polls.forms import RegistrationFrom
 from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.decorators import login_required
+from django_registration.backends.one_step.views import RegistrationView
 
 
 
-# class AboutView(TemplateView):
+
+# class AboutView(TemplateView):                               
 #     template_name = "main.html"
     
 def AboutView(request):
-    return render(request, 'polls/main.html')
-
-class auth(TemplateView):
-    template_name = "polls/auth.html"
-
+    return render(request, 'main.html')
+    
+# class auth(TemplateView):
+#     template_name = "auth.html"
+    
 def auth(request):
-    return render(request, 'polls/auth.html')
-
+    return render(request, 'auth.html')
+    
 class registration_page(TemplateView):
-    template_name = "polls/registration.html"
-
+    template_name = "registration.html"
+    
 class profile(TemplateView):
-    template_name = "polls/profile.html"
-
-
+    template_name = "profile.html"
+    
+def log_out(request):
+    if request.method == 'POST':
+        logout(request)
+        return redirect('/auth')   
+     
 
 # def SignIn(forms.Form):
 #     if request.method == 'POST':
-#         form = SignIn
+#         form = SignIn        
 #             username = forms.CharField(max_length=16)
 #             password = forms.PasswordInput()
 
-# # Логин
+# Логин
 def login_(request):
     if request.method =='POST':
         username = request.POST['username']
@@ -46,25 +50,48 @@ def login_(request):
         else:
             return redirect('auth')
 
+def sign_up(request):
+    if request.method == 'POST':
+        print('bigballs')
+        form = RegistrationFrom()
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect('auth')
+        return render(request, 'registration.html', { 'form': form})
+    else:
+        form = RegistrationFrom()
+        return render(request, 'registration.html', { 'form': form})ы
+    
+    
+# def sign_upp(request):
+#     if request.method == 'POST':
+#         form = RegistrationFrom()
+#         if form.is_valid():
+#             user = form.save()
+#             login(request, user)
+#             return redirect('auth')
 
 
-#
+class CustomRegistrationView(RegistrationView):
+    """
+    Вьюшка для регистрации пользователя в аккаунт
+    """
+
+    template_name = 'registration.html'
+    form_class = RegFrom
+    success_url = reverse_lazy('profile')
+
+    def dispatch(self, args, **kwargs):
+        if self.request.user.is_authenticated:
+            return redirect(self.success_url)
+
+        return super().dispatch(args, **kwargs)
+        
+
 def index(request):
     if request.user.is_authenticated:
-        return render(request, 'polls/main.html')
+        return render(request, 'main.html') 
     else:
         return redirect('/auth')
-
-def registration(request):
-    if request.method == 'POST':
-        form = RegistrationFrom(request.POST)
-        if form.is_valid():
-            form.save()
-            username = form.cleaned_data.get('username')
-            return redirect('AboutView')
-
-        else:
-            form = RegistrationFrom()
-
-        return render(request, 'polls/registration.html', {'form': form})
 

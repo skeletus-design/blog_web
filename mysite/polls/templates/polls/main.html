@@ -18,7 +18,7 @@
         </header>
         <nav class="sidebar">
             <!-- Сайд бар -->
-            <form action='#' method='POST'>
+            <form action='logout' method='POST'>
                 {% csrf_token %}
                 <div class="profile-button profile">
                     <a href={% url "profile" %} alt="Profile"><img src={% static "img/Account.png" %}></a>
@@ -37,10 +37,8 @@
                     <img src={% static "img/like.png" %} alt="Liked Posts">
                     <span class="profile-tooltip">Liked Posts</span>
                 </div>
-                <div class="profile-button">
-                    <img src={% static "img/exit.png" %} alt="Logout">
-                    <span class="profile-tooltip">Logout</span>
-                </div>
+            
+                
                 <div class="separator2"></div>
                 <!-- Новые кнопки -->
                 <div class="profile-button rounded-avatar">
@@ -89,6 +87,13 @@
                 <div class="profile-button">
                     <img src={% static "img/more.png" %} alt="More">
                     <span  class="profile-tooltip">More</span>
+                </div>
+            </form>
+            <form action='logout' method='POST'>
+                {% csrf_token %}
+                <div class="profile-button">
+                    <button style='background-color:none; background-repeat: no-repeat; border: none; cursor: pointer; overflow: hidden;'><img src={% static "img/exit.png" %} name="Logout"></button>
+                    <span class="profile-tooltip">Logout</span>
                 </div>
             </form>
         </nav>
