@@ -7,7 +7,7 @@ from django.contrib.auth import authenticate, login, logout
 # from django_registration.backends.one_step.views import RegistrationView
 
 def index(request):
-    return render(request, 'polls/main.html')
+    return render(request, 'main.html')
 
 def registration(request):
     if request.method == "POST":
@@ -17,7 +17,7 @@ def registration(request):
         return redirect('index')
     else:
         user_form = UserCreationForm()
-    return render(request, 'polls/registration.html', {'user_form': user_form})
+    return render(request, 'registration.html', {'user_form': user_form})
 
 
 # class AboutView(TemplateView):                               
@@ -30,7 +30,7 @@ def AboutView(request):
 #     template_name = "auth.html"
     
 def auth(request):
-    return render(request, 'polls/auth.html')
+    return render(request, 'auth.html')
     
 class registration_page(TemplateView):
     template_name = "registration.html"
